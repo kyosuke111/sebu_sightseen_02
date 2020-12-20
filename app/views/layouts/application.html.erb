@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>セブサーチ^^</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= include_gon %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <meta name="viweport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="header">
+      
+      <div class="headerbox1">
+        <h1>セブサーチ^^</h1>
+        <div class="headerbox2">
+          <div class="currency_calc">
+          （作成予定）日本円　⇔　Php
+          </div>
+          <div class="sns_btn">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="セブのことならセブサーチ^^" data-url="http://127.0.0.1:3000/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+
+      <div id="nav-drawer">
+        <input id="nav-input" type="checkbox" class="nav-unshown">
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content">
+          <ul>
+            <li><a href="#">Top</a></li>
+            <li><a href="#">観光スポット</a></li>
+            <li><a href="#">飲食</a></li>
+            <li><a href="#">名物</a></li>
+            <li><a href="#">ショッピング</a></li>
+            <li><a href="#">娯楽・ツアー</a></li>
+            <li><a href="#">宿泊</a></li>
+            <li><a href="#">スパ・マッサージ</a></li>
+            <li><a href="#">移動</a></li>
+            <li><a href="#">留学</a></li>
+            <li><a href="#">基本情報</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="nav">
+        <ul>
+          <li><a href="#">Top</a></li>
+          <li><%= link_to "観光", sightseens_path %></li>
+          <li><%= link_to "アイランド", islands_path %></li>
+           <li><%= link_to "名物", specialities_path %></li>
+          <li><%= link_to "グルメ", restaurants_path %></li>
+          <li><%= link_to "地元ブランド", localbrands_path %></li>
+          <li><%= link_to "ショッピング", shoppings_path %></li>
+          <li><%= link_to "クラブ・カジノ", nightspots_path %></li>
+          <li><%= link_to "ツアー", tours_path %></li>
+          <li><%= link_to "宿泊", accommodations_path %></li>
+          <li><%= link_to "スパ・マッサージ", spas_path %></li>
+          <li><%= link_to "お土産", souvenirs_path %></li>
+          <li><%= link_to "交通・移動", transportations_path %></li>
+          <li><%= link_to "留学", schools_path %></li>
+          <li><%= link_to "基本情報", generals_path %></li>
+        </ul>
+      </div>
+
+    </div>
+    <%= yield %>
+    <footer>
+      <p>copyright xx<p>
+    </footer>
+
+
+  </body>
+</html>

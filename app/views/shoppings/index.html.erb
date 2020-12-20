@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="search_area">
+
+    <div class="search-drawer">
+      <input id="search-input" type="checkbox" class="search-unshown">
+      <label id="search-open" for="search-input">絞り込み検索</label>
+      <label class="search-unshown" id="search-close" for="search-input"></label>
+      <div class="search-content">
+        <div class="search_title">絞り込み検索</div>
+        <%= search_form_for(@q, url: search_shoppings_path) do |f| %>
+          <fieldset>
+            <legend>対象</legend>
+            <ul>
+              <% @list_categorys.each do |list| %>
+                <li>
+                  <%= f.check_box :category_ja_eq_any, { multiple: true }, list.category_ja, nil %><%= list.category_ja %>
+                </li>
+              <% end %>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>エリア</legend>
+            <ul>
+              <% @list_areas.each do |list| %>
+                <li>
+                  <%= f.check_box :area_ja_eq_any, { multiple: true }, list.area_ja, nil %><%= list.area_ja %>
+                </li>
+              <% end %>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>キーワード</legend>
+            <%= f.search_field :name_ja_or_name_en_or_category_ja_or_category_en_or_area_ja_or_area_en_or_description_ja_cont ,class: "text_search"%>
+            </fieldset>
+
+          <div class="btn_wrapper">
+            <%= f.submit "この条件で探す", class: "btn" %>
+          </div>
+        <% end %>
+      </div>  
+    </div>
+  </div> 
+  
+  <main>
+    <div class="number">全<%= @num_targets %>件</div>
+    <div class="content">
+      <% @targets.each do |target| %>
+        <div class="content_wrap">
+          <div class="name_area">
+            <div class="name">  
+              <h2><%= target.name_ja %></h2>
+              <p><%= target.name_en %></p>
+            </div>
+            <div class="tag_area">
+              <div class="search_tag"><%= target.category_ja %></div>  
+              <div class="search_tag"><%= target.area_ja %></div>
+            </div>
+          </div>
+    
+          <div class="content_area">
+            <div class="pic_area">
+              <div class="pic_main">
+              <% if target.picture1 %>
+                  <img src="/assets/<%= target.picture1 %>" id="pic_main_<%= target.id %>">
+                <% else %>
+                  <img src="/assets/comming_soon.jpg" id="pic_main_<%= target.id %>">
+              <% end %>
+              </div>
+              <div class="pic_sub">
+                <% if target.picture1 %>
+                    <img src="/assets/<%= target.picture1 %>" id="pic_sub1_<%= target.id %>">
+                  <% else %>
+                    <img src="/assets/comming_soon.jpg" id="pic_sub1_<%= target.id %>">
+                <% end %>
+                <% if target.picture2 %>
+                    <img src="/assets/<%= target.picture2 %>" id="pic_sub2_<%= target.id %>" >
+                  <% else %>
+                    <img src="/assets/comming_soon.jpg" id="pic_sub2_<%= target.id %>">
+                <% end %>
+                <% if target.picture3 %>
+                    <img src="/assets/<%= target.picture3 %>" id="pic_sub3_<%= target.id %>">
+                  <% else %>
+                    <img src="/assets/comming_soon.jpg" id="pic_sub3_<%= target.id %>">
+                <% end %>
+              </div>
+            </div>
+            <div class="article_area">
+              <div class="description">
+                <%= target.description_ja %>
+              </div>
+              <div class="non_description">
+                <div class="holiday">
+                  <span class="material-icons md-18">event_busy</span> <%= target.holidays_ja %>
+                </div>
+                <div class="businesshour_ja">
+                  <span class="material-icons md-18">schedule</span> <%= target.businesshours_ja %>
+                </div>
+                <div class="address">
+                  <% if target.mapurl.blank? or target.mapurl === "-"  %>
+                    <span class="material-icons md-18">place</span> <%= target.address %>
+                  <% else %>
+                    <span class="material-icons md-18">place</span> <a href="<%=target.mapurl %>" target="_blank"><%= target.address %></a>
+                  <% end %>
+                </div>
+                <% if target.url.present? and target.url != "-"  %>
+                  <div class="url item">
+                    <span class="material-icons md-18">home</span> <a href="<%= target.url %>" target="_blank">Webサイトを見る</a>
+                  </div>                   
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </main>
+  
+  <aside>
+  </aside>
+</div>

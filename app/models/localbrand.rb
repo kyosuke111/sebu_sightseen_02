@@ -1,0 +1,2 @@
+class Localbrand < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class Nightspot < ApplicationRecord
+end

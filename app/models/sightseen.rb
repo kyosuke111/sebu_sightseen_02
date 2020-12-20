@@ -1,0 +1,2 @@
+class Sightseen < ApplicationRecord
+end
