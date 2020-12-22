@@ -22,6 +22,7 @@
           <div class="currency_calc">
           （作成予定）日本円　⇔　Php
           </div>
+          <div class="whether">現在の時刻：気温：天候</div>
           <div class="sns_btn">
             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="セブのことならセブサーチ^^" data-url="http://127.0.0.1:3000/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
@@ -52,20 +53,20 @@
       <div class="nav">
         <ul>
           <li><a href="#">Top</a></li>
-          <li><%= link_to "観光", sightseens_path %></li>
-          <li><%= link_to "アイランド", islands_path %></li>
-           <li><%= link_to "名物", specialities_path %></li>
-          <li><%= link_to "グルメ", restaurants_path %></li>
-          <li><%= link_to "地元ブランド", localbrands_path %></li>
-          <li><%= link_to "ショッピング", shoppings_path %></li>
-          <li><%= link_to "クラブ・カジノ", nightspots_path %></li>
-          <li><%= link_to "ツアー", tours_path %></li>
-          <li><%= link_to "宿泊", accommodations_path %></li>
-          <li><%= link_to "スパ・マッサージ", spas_path %></li>
-          <li><%= link_to "お土産", souvenirs_path %></li>
-          <li><%= link_to "交通・移動", transportations_path %></li>
-          <li><%= link_to "留学", schools_path %></li>
-          <li><%= link_to "基本情報", generals_path %></li>
+          <li><%= link_to "観光", sightseens_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "アイランド", islands_path, data: {"turbolinks" => false} %></li>
+           <li><%= link_to "名物", specialities_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "グルメ", restaurants_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "地元ブランド", localbrands_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "ショッピング", shoppings_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "クラブ・カジノ", nightspots_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "ツアー", tours_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "宿泊", accommodations_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "スパ・マッサージ", spas_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "お土産", souvenirs_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "交通・移動", transportations_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "留学", schools_path, data: {"turbolinks" => false} %></li>
+          <li><%= link_to "基本情報", generals_path, data: {"turbolinks" => false} %></li>
         </ul>
       </div>
 

@@ -47,8 +47,8 @@
         <div class="content_wrap">
           <div class="name_area">
             <div class="name">  
-              <h2><%= target.name_ja %></h2>
-              <p><%= target.name_en %></p>
+              <h2><%= link_to "#{target.name_ja}", "/sightseens/#{target.id}", method: :get %></h2>
+              <p><%= link_to "#{target.name_en}", "/sightseens/#{target.id}", method: :get %></p>
             </div>
             <div class="tag_area">
               <div class="search_tag"><%= target.category_ja %></div>  

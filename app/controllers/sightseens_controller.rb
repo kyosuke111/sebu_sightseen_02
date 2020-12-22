@@ -17,6 +17,11 @@ class SightseensController < ApplicationController
     @num_targets = @search_results.count
   end
 
+  def show
+    @target = Sightseen.find(params[:id])
+  end
+
+
   private
   def search_params
     params.require(:q).permit!

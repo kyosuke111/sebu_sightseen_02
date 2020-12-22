@@ -1,0 +1,184 @@
+<div class="show_container">
+  <main>
+    <%= link_to("前ページに戻る", :back, class:"show_btn") %>
+
+    <div class="name_area">
+      <div class="name">
+        <h2><%= @target.name_ja %></h2>
+        <p><%= @target.name_en %></p>
+      </div>
+      <div class="tag_area">
+        <div class="search_tag"><%= @target.area_ja %></div>
+        <div class="search_tag"><%= @target.category_ja %></div>
+      </div>
+    </div>
+
+    <div class="show_pic_area">
+      <div class="show_pic_main_area">
+        <% if @target.picture1 %>
+            <img src="/assets/<%= @target.picture1 %>" id="pic_main_<%= @target.id %>">
+          <% else %>
+            <img src="/assets/comming_soon.jpg" id="pic_main_<%= @target.id %>">
+        <% end %> 
+      </div>
+      <div class="show_pic_sub_area">
+        <% if @target.picture1 %>
+            <img src="/assets/<%= @target.picture1 %>" id="pic_sub1_<%= @target.id %>">
+          <% else %>
+            <img src="/assets/comming_soon.jpg" id="pic_sub1_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture2 %>
+            <img src="/assets/<%= @target.picture2 %>" id="pic_sub2_<%= @target.id %>" >
+          <% else %>
+            <img src="/assets/comming_soon.jpg" id="pic_sub2_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture3 %>
+          <img src="/assets/<%= @target.picture3 %>" id="pic_sub3_<%= @target.id %>">
+          <% else %>
+          <img src="/assets/comming_soon.jpg" id="pic_sub3_<%= @target.id %>">
+        <% end %>
+      </div>
+    </div>
+
+    <div class="show_description">
+      <h3>概要</h3>
+      <div class="show_article_area">
+        <div class="show_article"><%= @target.description_ja %></div>
+      </div>
+
+      <h3>スケジュール</h3>
+      <div class="show_article_area">
+        <div class="activity_items">
+          <div class="show_activity_time"><%= @target.meeting_time %></div>
+          <div class="show_activity_title"><%= @target.meeting_place_ja %></div>
+        </div>
+        <div class="activity_items">
+          <div class="show_activity_time"><%= @target.activity1_time %></div>
+          <div class="show_activity_title"><%= @target.activity1_action %></div>
+        </div>
+        <div class="activity_items">
+          <div class="show_activity_time"><%= @target.activity2_time %></div>
+          <div class="show_activity_title"><%= @target.activity2_action %></div>
+        </div>
+        <div class="activity_items">
+          <div class="show_activity_time"><%= @target.activity3_time %></div>
+          <div class="show_activity_title"><%= @target.activity3_action %></div>
+        </div>
+        <div class="activity_items">
+          <div class="show_activity_time"><%= @target.activity4_time %></div>
+          <div class="show_activity_title"><%= @target.activity4_action %></div>
+        </div>
+        <div class="activity_items">
+          <div class="show_activity_time"><%= @target.activity5_time %></div>
+          <div class="show_activity_title"><%= @target.activity5_action %></div>
+        </div>
+      </div>
+
+
+      <h3>内容紹介</h3>
+      <div class="show_article_area">
+        <div class="activity_items">
+          <div class="show_activity_time"><%= @target.meeting_time %></div>
+          <div class="show_activity_title"><%= @target.meeting_place_ja %></div>
+        </div>
+
+        <div class="show_article_area_l2">
+          <div class="activity_items">
+            <div class="show_activity_time"><%= @target.activity1_time %></div>
+            <div class="show_activity_title"><%= @target.activity1_action %></div>
+          </div>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.activity1_explanation %></div>
+            <div class="show_pic_artcile_area"><img src="/assets/<%= @target.activity1_picture %>" ></div>
+          </div>
+        </div>
+
+        <div class="show_article_area_l2">
+          <div class="activity_items">
+            <div class="show_activity_time"><%= @target.activity2_time %></div>
+            <div class="show_activity_title"><%= @target.activity2_action %></div>
+          </div>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.activity2_explanation %></div>
+            <div class="show_pic_artcile_area"><img src="/assets/<%= @target.activity2_picture %>" ></div>
+          </div>
+        </div>
+
+        <div class="show_article_area_l2">
+          <div class="activity_items">
+            <div class="show_activity_time"><%= @target.activity3_time %></div>
+            <div class="show_activity_title"><%= @target.activity3_action %></div>
+          </div>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.activity3_explanation %></div>
+            <div class="show_pic_artcile_area"><img src="/assets/<%= @target.activity3_picture %>" ></div>
+          </div>
+        </div>
+
+        <div class="show_article_area_l2">
+          <div class="activity_items">
+            <div class="show_activity_time"><%= @target.activity4_time %></div>
+            <div class="show_activity_title"><%= @target.activity4_action %></div>
+          </div>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.activity4_explanation %></div>
+            <div class="show_pic_artcile_area"><img src="/assets/<%= @target.activity4_picture %>" ></div>
+          </div>
+        </div>
+
+        <div class="show_article_area_l2">
+          <div class="activity_items">
+            <div class="show_activity_time"><%= @target.activity5_time %></div>
+            <div class="show_activity_title"><%= @target.activity5_action %></div>
+          </div>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.activity5_explanation %></div>
+            <div class="show_pic_artcile_area"><img src="/assets/<%= @target.activity5_picture %>" ></div>
+          </div>
+        </div>
+
+      </div>
+
+      <h3>キャンセルポリシー</h3>
+      <div class="show_article_area">
+        <div class="show_article"><%= @target.cancel_policy_ja %></div>
+      </div>
+
+      <h3>その他注意事項</h3>
+      <div class="show_article_area">
+        <div class="show_article"><%= @target.note_ja %></div>
+      </div>
+
+      <h3>ツアー応募期間・提供会社紹介</h3>
+      <div class="show_article_area">
+        <div class="show_basic_items">
+          <div class="show_basic_title">ツアー受付可能期間</div>
+          <div class="show_basic_artcile"><%= @target.apply_startdate.strftime("%Y/%m/%d") %>～<%= @target.apply_enddate.strftime("%Y/%m/%d") %></div>          
+        </div>
+        <div class="show_basic_items">
+          <div class="show_basic_title">支払い方法</div>
+          <div class="show_basic_artcile"><%= @target.payment_method_ja %></div>
+        </div>
+        <div class="show_basic_items">
+          <div class="show_basic_title">定休日</div>
+          <div class="show_basic_artcile"><%= @target.apply_startdate.strftime("%Y/%m/%d") %>～<%= @target.apply_enddate.strftime("%Y/%m/%d") %></div>          
+        </div>
+        <div class="show_basic_items">
+          <div class="show_basic_title">提供会社</div>
+          <div class="show_basic_artcile"><%= @target.companyname_ja %>(<%= @target.companyname_en %>)</div>
+        </div>
+        <div class="show_basic_items">
+          <div class="show_basic_title">連絡先</div>
+          <div class="show_basic_artcile">xx</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="apply_btn">ツアーの問い合せ・申し込み</a>
+
+    <div class="show_bottom_btns">
+      <a href="#" class="show_btn">先頭に戻る</a>
+      <%= link_to("前ページに戻る", :back, class:"show_btn") %>
+    </div>
+  </main>
+</div>
