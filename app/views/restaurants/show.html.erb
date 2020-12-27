@@ -1,7 +1,8 @@
 <div class="show_container">
   <main>
     <%= link_to("前ページに戻る", :back, class:"show_btn") %>
-
+    <%= link_to("クーポン", :back, class:"show_btn") %>
+  
     <div class="name_area">
       <div class="name">
         <h2><%= @target.name_ja %></h2>
@@ -61,36 +62,38 @@
         <div class="show_article"><%= @target.description_ja %></div>
       </div>
 
-      <% if @target.highlight1.present? %>
-        <h3>見所</h3>
+      <% if @target.comment.present? %>
+        <h3>店主・料理長のこだわり</h3>
         <div class="show_article_area">
-            <h4>見所1</h4>
+          <div class="show_highlight_article_area">
+            <div class="show_article_highlight"><%= @target.comment %></div>
+            <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.comment_pic %>"></div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @target.highlight1.present? %>
+        <h3>おすすめ</h3>
+        <div class="show_article_area">
+            <h4>料理・飲み物1</h4>
             <div class="show_highlight_article_area">
               <div class="show_article_highlight"><%= @target.highlight1 %></div>
               <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight1_pic %>"></div>
             </div>
           <% if @target.highlight2.present? %>
-            <h4>見所2</h4>
+            <h4>料理・飲み物2</h4>
             <div class="show_highlight_article_area">
               <div class="show_article_highlight"><%= @target.highlight2 %></div>
               <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight2_pic %>"></div>
             </div>
           <% end %>
           <% if @target.highlight3.present? %>
-            <h4>見所3</h4>
+            <h4>料理・飲み物3</h4>
             <div class="show_highlight_article_area">
               <div class="show_article_highlight"><%= @target.highlight3 %></div>
               <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight3_pic %>"></div>
             </div>
           <% end %>
-        </div>
-      <% end %>
-
-      <% if @target.guide_map.present? %>
-        <h3>案内図</h3>
-        <div class="show_article_area">
-          <div class="show_article"><%= @target.guide %></div>
-          <div class="show_pic_artcile_area_guide"><img src="/assets/<%= @target.guide_map %>"></div>
         </div>
       <% end %>
 
@@ -127,9 +130,27 @@
             <div class="show_basic_artcile"><%= @target.contact_tel %></div>
           </div>
         <% end %>
-        <%if @target.parking.present? %>
+        <% if @target.price_ja.present? %>
           <div class="show_basic_items">
-            <div class="show_basic_title">専用駐</div>
+            <div class="show_basic_title">平均予算</div>
+            <div class="show_basic_artcile"><%= @target.price_ja %></div>
+          </div>
+        <% end %>
+        <% if @target.payment_method.present? %>
+          <div class="show_basic_items">
+            <div class="show_basic_title">支払い方法</div>
+            <div class="show_basic_artcile"><%= @target.payment_method %></div>
+          </div>
+        <% end %>
+        <% if @target.capacity.present? %>
+          <div class="show_basic_items">
+            <div class="show_basic_title">キャパシティ</div>
+            <div class="show_basic_artcile"><%= @target.capacity %></div>
+          </div>
+        <% end %>
+        <% if @target.parking.present? %>
+          <div class="show_basic_items">
+            <div class="show_basic_title">駐車場</div>
             <div class="show_basic_artcile"><%= @target.parking %></div>
           </div>
         <% end %>

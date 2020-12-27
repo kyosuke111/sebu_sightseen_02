@@ -8,13 +8,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :restaurants do
+  resources :restaurants, only: [:index, :show]  do
     collection do
       get 'search'
     end
   end
 
-  resources :spas do
+  resources :spas, only: [:index, :show] do
     collection do
       get 'search'
     end
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :shoppings do
+  resources :shoppings, only: [:index, :show] do
     collection do
       get 'search'
     end
@@ -50,7 +50,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :accommodations do
+  resources :accommodations, only: [:index, :show] do
     collection do
       get 'search'
     end
@@ -62,7 +62,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :islands do
+  resources :islands, only: [:index, :show] do
     collection do
       get 'search'
     end

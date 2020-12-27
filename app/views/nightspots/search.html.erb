@@ -92,16 +92,16 @@
                 <%= target.description_ja %>
               </div>
               <div class="non_description">
-                <div class="holiday">
+                <div class="non_description_item">
                 <span class="material-icons md-18">event_busy</span> <%= target.holidays_ja %>
                 </div>
-                <div class="businesshour_ja">
+                <div class="non_description_item">
                   <span class="material-icons md-18">schedule</span> <%= target.businesshours_ja %>
                 </div>
-                <div class="price_ja">
+                <div class="non_description_item">
                   <span class="material-icons md-18">payment</span> <%= target.price_ja %>
                 </div>
-                <div class="address">
+                <div class="non_description_item">
                   <% if target.mapurl.blank? or target.mapurl === "-"  %>
                     <span class="material-icons md-18">place</span> <%= target.address %>
                   <% else %>
@@ -109,7 +109,7 @@
                   <% end %>
                 </div>
                 <% if target.url.present? and target.url != "-"  %>
-                  <div class="url item">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">home</span> <a href="<%= target.url %>" target="_blank">Webサイトを見る</a>
                   </div>                       
                 <% end %>

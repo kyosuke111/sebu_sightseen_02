@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_19_010926) do
+ActiveRecord::Schema.define(version: 2020_12_25_040753) do
 
   create_table "accommodations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name_ja"
@@ -32,6 +32,52 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.string "picture4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "picture5"
+    t.string "picture6"
+    t.string "picture7"
+    t.string "picture8"
+    t.string "flag_show"
+    t.string "roomtype1"
+    t.text "roomtype1_description"
+    t.string "roomtype2"
+    t.text "roomtype2_description"
+    t.string "roomtype3"
+    t.text "roomtype3_description"
+    t.string "roomtype4"
+    t.text "roomtype4_description"
+    t.string "roomtype5"
+    t.text "roomtype5_description"
+    t.string "shop1_name"
+    t.string "shop1_category"
+    t.string "shop1_businesshours"
+    t.string "shop1_tel"
+    t.string "shop1_url"
+    t.string "shop2_name"
+    t.string "shop2_category"
+    t.string "shop2_businesshours"
+    t.string "shop2_tel"
+    t.string "shop2_url"
+    t.string "shop3_name"
+    t.string "shop3_category"
+    t.string "shop3_businesshours"
+    t.string "shop3_tel"
+    t.string "shop3_url"
+    t.string "shop4_name"
+    t.string "shop4_category"
+    t.string "shop4_businesshours"
+    t.string "shop4_tel"
+    t.string "shop4_url"
+    t.string "shop5_name"
+    t.string "shop5_category"
+    t.string "shop5_businesshours"
+    t.string "shop5_tel"
+    t.string "shop5_url"
+    t.text "direction1"
+    t.text "direction2"
+    t.text "direction3"
+    t.string "contact_tel"
+    t.string "contact_mail"
+    t.string "parking"
   end
 
   create_table "generals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -73,6 +119,22 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.string "picture4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "picture5"
+    t.string "picture6"
+    t.string "picture7"
+    t.string "picture8"
+    t.string "flag_show"
+    t.text "highlight1"
+    t.string "highlight1_pic"
+    t.text "highlight2"
+    t.string "highlight2_pic"
+    t.text "highlight3"
+    t.string "highlight3_pic"
+    t.text "guide"
+    t.string "guide_map"
+    t.text "direction1"
+    t.text "direction2"
+    t.text "direction3"
   end
 
   create_table "localbrands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -151,6 +213,29 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.string "picture4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "picture5"
+    t.string "picture6"
+    t.string "picture7"
+    t.string "picture8"
+    t.string "flag_show"
+    t.text "comment"
+    t.string "comment_pic"
+    t.text "highlight1"
+    t.string "highlight1_pic"
+    t.text "highlight2"
+    t.string "highlight2_pic"
+    t.text "highlight3"
+    t.string "highlight3_pic"
+    t.text "guide"
+    t.string "guide_map"
+    t.text "direction1"
+    t.text "direction2"
+    t.text "direction3"
+    t.string "contact_tel"
+    t.string "contact_mail"
+    t.string "payment_method"
+    t.string "capacity"
+    t.string "parking"
   end
 
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -219,6 +304,29 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.string "picture4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "picture5"
+    t.string "picture6"
+    t.string "picture7"
+    t.string "picture8"
+    t.string "flag_show"
+    t.string "sale_name"
+    t.string "sale_term"
+    t.text "sale_description"
+    t.text "floor_b2"
+    t.text "floor_b1"
+    t.text "floor_base"
+    t.text "floor_1f"
+    t.text "floor_2f"
+    t.text "floor_3f"
+    t.text "floor_4f"
+    t.text "floor_5f"
+    t.text "floor_6f"
+    t.text "direction1"
+    t.text "direction2"
+    t.text "direction3"
+    t.string "contact_tel"
+    t.string "contact_mail"
+    t.string "parking"
   end
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -269,6 +377,25 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "mapurl"
+    t.string "picture5"
+    t.string "picture6"
+    t.string "picture7"
+    t.string "picture8"
+    t.string "flag_show"
+    t.text "highlight1"
+    t.string "highlight1_pic"
+    t.text "highlight2"
+    t.string "highlight2_pic"
+    t.text "highlight3"
+    t.string "highlight3_pic"
+    t.text "guide"
+    t.string "guide_map"
+    t.text "direction1"
+    t.text "direction2"
+    t.text "direction3"
+    t.string "contact_tel"
+    t.string "contact_mail"
+    t.string "parking"
   end
 
   create_table "souvenirs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -315,6 +442,41 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.string "picture4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "picture5"
+    t.string "picture6"
+    t.string "picture7"
+    t.string "picture8"
+    t.string "flag_show"
+    t.text "comment"
+    t.string "comment_pic"
+    t.text "highlight1"
+    t.string "highlight1_pic"
+    t.text "highlight2"
+    t.string "highlight2_pic"
+    t.text "highlight3"
+    t.string "highlight3_pic"
+    t.string "menu1_name"
+    t.string "menu1_time"
+    t.string "menu1_price"
+    t.text "menu1_description"
+    t.string "menu1_pic"
+    t.string "menu2_name"
+    t.string "menu2_time"
+    t.string "menu2_price"
+    t.text "menu2_description"
+    t.string "menu2_pic"
+    t.string "menu3_name"
+    t.string "menu3_time"
+    t.string "menu3_price"
+    t.text "menu3_description"
+    t.string "menu3_pic"
+    t.text "direction1"
+    t.text "direction2"
+    t.text "direction3"
+    t.string "contact_tel"
+    t.string "contact_mail"
+    t.string "payment_method"
+    t.string "parking"
   end
 
   create_table "specialities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -361,6 +523,11 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.string "picture2"
     t.string "picture3"
     t.string "picture4"
+    t.string "picture5"
+    t.string "picture6"
+    t.string "picture7"
+    t.string "picture8"
+    t.string "flag_show"
     t.string "total_acttime"
     t.text "cancel_policy_ja"
     t.text "cancel_policy_en"
@@ -373,6 +540,8 @@ ActiveRecord::Schema.define(version: 2020_12_19_010926) do
     t.string "meeting_place_en"
     t.string "meeting_address"
     t.text "meeting_mapurl"
+    t.text "meeting_explanation"
+    t.string "meeting_picture"
     t.string "activity1_time"
     t.string "activity1_action"
     t.text "activity1_explanation"

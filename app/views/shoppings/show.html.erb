@@ -61,36 +61,66 @@
         <div class="show_article"><%= @target.description_ja %></div>
       </div>
 
-      <% if @target.highlight1.present? %>
-        <h3>見所</h3>
+      <% if @target.sale_description.present? %>
+        <h3>セール情報</h3>
         <div class="show_article_area">
-            <h4>見所1</h4>
-            <div class="show_highlight_article_area">
-              <div class="show_article_highlight"><%= @target.highlight1 %></div>
-              <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight1_pic %>"></div>
-            </div>
-          <% if @target.highlight2.present? %>
-            <h4>見所2</h4>
-            <div class="show_highlight_article_area">
-              <div class="show_article_highlight"><%= @target.highlight2 %></div>
-              <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight2_pic %>"></div>
-            </div>
-          <% end %>
-          <% if @target.highlight3.present? %>
-            <h4>見所3</h4>
-            <div class="show_highlight_article_area">
-              <div class="show_article_highlight"><%= @target.highlight3 %></div>
-              <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight3_pic %>"></div>
-            </div>
-          <% end %>
+          <div class="show_article">期間 <%= @target.sale_term %></div>
+          <div class="show_article">セール名 <%= @target.sale_name %></div>
+          <div class="show_article">主な内容<%= @target.sale_description %></div>
         </div>
       <% end %>
 
-      <% if @target.guide_map.present? %>
-        <h3>案内図</h3>
+      <% if @target.floor_b2.present? %>
+        <h3>フロアガイド</h3>
         <div class="show_article_area">
-          <div class="show_article"><%= @target.guide %></div>
-          <div class="show_pic_artcile_area_guide"><img src="/assets/<%= @target.guide_map %>"></div>
+          <% if @target.floor_b2.present? %>
+            <h4>B2</h4>
+            <div class="show_floor_article_area">
+              <div class="show_article"><%= @target.floor_b2 %></div>
+            </div>
+          <% end %>
+          <% if @target.floor_b1.present? %>
+            <h4>B1</h4>
+            <div class="show_floor_article_area">
+              <div class="show_article"><%= @target.floor_b1 %></div>
+            </div>
+          <% end %>
+          <% if @target.floor_1f.present? %>
+              <h4>1F</h4>
+              <div class="show_floor_article_area">
+                <div class="show_article"><%= @target.floor_1f %></div>
+              </div>
+          <% end %>
+          <% if @target.floor_2f.present? %>
+            <h4>2F</h4>
+            <div class="show_floor_article_area">
+              <div class="show_article"><%= @target.floor_2f %></div>
+            </div>
+          <% end %>
+          <% if @target.floor_3f.present? %>
+            <h4>3F</h4>
+            <div class="show_floor_article_area">
+              <div class="show_article"><%= @target.floor_3f %></div>
+            </div>
+          <% end %>
+          <% if @target.floor_4f.present? %>
+            <h4>4F</h4>
+              <div class="show_floor_article_area">
+              <div class="show_article"><%= @target.floor_4f %></div>
+            </div>
+          <% end %>
+          <% if @target.floor_5f.present? %>
+            <h4>5F</h4>
+            <div class="show_floor_article_area">
+              <div class="show_article"><%= @target.floor_5f %></div>
+            </div>
+          <% end %>         
+          <% if @target.floor_5f.present? %>
+            <h4>6F</h4>
+            <div class="show_floor_article_area">
+              <div class="show_article"><%= @target.floor_6f %></div>
+            </div>
+          <% end %>
         </div>
       <% end %>
 
@@ -127,9 +157,9 @@
             <div class="show_basic_artcile"><%= @target.contact_tel %></div>
           </div>
         <% end %>
-        <%if @target.parking.present? %>
+        <% if @target.parking.present? %>        
           <div class="show_basic_items">
-            <div class="show_basic_title">専用駐</div>
+            <div class="show_basic_title">駐車場</div>
             <div class="show_basic_artcile"><%= @target.parking %></div>
           </div>
         <% end %>

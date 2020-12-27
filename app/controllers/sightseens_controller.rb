@@ -19,6 +19,7 @@ class SightseensController < ApplicationController
 
   def show
     @target = Sightseen.find(params[:id])
+    gon.target_datas = @target
   end
 
 

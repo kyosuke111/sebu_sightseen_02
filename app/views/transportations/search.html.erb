@@ -82,11 +82,11 @@
                   <%= target.description_ja %>
                 </div>
                 <div class="non_description">
-                  <div class="price_ja item">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">payment</span> <%= target.price_ja %>
                   </div>
                   <% if target.url.present? and target.url != "-"  %>
-                    <div class="url item">
+                    <div class="non_description_item">
                       <span class="material-icons md-18">home</span> <a href="<%= target.url %>" target="_blank">Webサイトを見る</a>
                     </div>
                   <% end %>                  

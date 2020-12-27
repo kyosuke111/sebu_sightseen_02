@@ -1,0 +1,233 @@
+<div class="show_container">
+  <main>
+    <%= link_to("前ページに戻る", :back, class:"show_btn") %>
+
+    <div class="name_area">
+      <div class="name">
+        <h2><%= @target.name_ja %></h2>
+        <p><%= @target.name_en %></p>
+      </div>
+      <div class="tag_area">
+        <div class="search_tag"><%= @target.area_ja %></div>
+        <div class="search_tag"><%= @target.category_ja %></div>
+      </div>
+    </div>
+
+    <div class="show_pic_area">
+      <div class="show_pic_main_area">
+        <% if @target.picture1 %>
+            <img src="/assets/<%= @target.picture1 %>" id="pic_main_<%= @target.id %>">
+          <% else %>
+            <img src="/assets/comming_soon.jpg" id="pic_main_<%= @target.id %>">
+        <% end %> 
+      </div>
+      <div class="show_pic_sub_area">
+        <% if @target.picture1 %>
+            <img src="/assets/<%= @target.picture1 %>" id="pic_sub1_<%= @target.id %>">
+          <% else %>
+            <img src="/assets/comming_soon.jpg" id="pic_sub1_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture2 %>
+            <img src="/assets/<%= @target.picture2 %>" id="pic_sub2_<%= @target.id %>" >
+          <% else %>
+            <img src="/assets/comming_soon.jpg" id="pic_sub2_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture3 %>
+          <img src="/assets/<%= @target.picture3 %>" id="pic_sub3_<%= @target.id %>">
+          <% else %>
+          <img src="/assets/comming_soon.jpg" id="pic_sub3_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture4 %>
+          <img src="/assets/<%= @target.picture4 %>" id="pic_sub4_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture5 %>
+          <img src="/assets/<%= @target.picture5 %>" id="pic_sub5_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture6 %>
+          <img src="/assets/<%= @target.picture6 %>" id="pic_sub6_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture7 %>
+          <img src="/assets/<%= @target.picture7 %>" id="pic_sub7_<%= @target.id %>">
+        <% end %>
+        <% if @target.picture8 %>
+          <img src="/assets/<%= @target.picture8 %>" id="pic_sub8_<%= @target.id %>">
+        <% end %>
+      </div>
+    </div>
+
+    <div class="show_description">
+      <h3>概要</h3>
+      <div class="show_article_area">
+        <div class="show_article"><%= @target.description_ja %></div>
+      </div>
+
+    <% if @target.roomtype1.present? %>
+      <h3>部屋</h3>
+      <div class="show_article_area">
+          
+          <h4><%= @target.roomtype1 %></h4>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.roomtype1_description %></div>
+            <div class="show_pic_artcile_area"><img src="#"></div>
+          </div>
+
+        <% if @target.roomtype2.present? %>
+          <h4><%= @target.roomtype2 %></h4>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.roomtype2_description %></div>
+            <div class="show_pic_artcile_area"><img src="#"></div>
+          </div>
+        <% end %>
+
+        <% if @target.roomtype3.present? %>
+          <h4><%= @target.roomtype3 %></h4>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.roomtype3_description %></div>
+            <div class="show_pic_artcile_area"><img src="#"></div>
+          </div>
+        <% end %>
+
+        <% if @target.roomtype4.present? %>
+          <h4><%= @target.roomtype4 %></h4>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.roomtype4_description %></div>
+            <div class="show_pic_artcile_area"><img src="#"></div>
+          </div>
+        <% end %>  
+
+        <% if @target.roomtype5.present? %>
+          <h4><%= @target.roomtype5 %></h4>
+          <div class="show_activity_article_area">
+            <div class="show_article_activity"><%= @target.roomtype5_description %></div>
+            <div class="show_pic_artcile_area"><img src="#"></div>
+          </div>
+        <% end %>  
+
+      </div>
+    <% end %>
+
+    <% if @target.shop1_name.present? %>    
+      <h3>館内レストラン・バー</h3>
+      <div class="show_article_area">
+          
+          <h4><%= @target.shop1_name %></h4>
+          <div class="show_restshop_article_area">
+            <div class="show_article_restshop">
+              <ul>
+                <li><span class="material-icons md-18">restaurant</span> <%= @target.shop1_category %></li>
+                <li><span class="material-icons md-18">schedule</span> <%= @target.shop1_businesshours %></li>
+                <li><span class="material-icons md-18">info</span> <%= @target.shop1_tel %></li>
+                <li><span class="material-icons md-18">home</span> <%= @target.shop1_url %></li>
+              </ul>
+            </div>
+            <div class="show_pic_artcile_area_restinfo"><img src="#"></div>
+          </div>
+        
+        <% if @target.shop2_name.present? %> 
+          <h4><%= @target.shop2_name %></h4>
+          <div class="show_restshop_article_area">
+            <div class="show_article_restshop">
+              <ul>
+                <li><span class="material-icons md-18">restaurant</span> <%= @target.shop2_category %></li>
+                <li><span class="material-icons md-18">schedule</span> <%= @target.shop2_businesshours %></li>
+                <li><span class="material-icons md-18">info</span> <%= @target.shop2_tel %></li>
+                <li><span class="material-icons md-18">home</span> <%= @target.shop2_url %></li>
+              </ul>
+            </div>
+            <div class="show_pic_artcile_area_restinfo"><img src="#"></div>
+          </div>
+        <% end %>
+
+        <% if @target.shop3_name.present? %> 
+          <h4><%= @target.shop3_name %></h4>
+          <div class="show_restshop_article_area">
+            <div class="show_article_restshop">
+              <ul>
+                <li><span class="material-icons md-18">restaurant</span> <%= @target.shop3_category %></li>
+                <li><span class="material-icons md-18">schedule</span> <%= @target.shop3_businesshours %></li>
+                <li><span class="material-icons md-18">info</span> <%= @target.shop3_tel %></li>
+                <li><span class="material-icons md-18">home</span> <%= @target.shop3_url %></li>
+              </ul>
+            </div>
+            <div class="show_pic_artcile_area_restinfo"><img src="#"></div>
+          </div>
+        <% end %>
+
+        <% if @target.shop4_name.present? %> 
+          <h4><%= @target.shop4_name %></h4>
+          <div class="show_restshop_article_area">
+            <div class="show_article_restshop">
+              <ul>
+                <li><span class="material-icons md-18">restaurant</span> <%= @target.shop4_category %></li>
+                <li><span class="material-icons md-18">schedule</span> <%= @target.shop4_businesshours %></li>
+                <li><span class="material-icons md-18">info</span> <%= @target.shop4_tel %></li>
+                <li><span class="material-icons md-18">home</span> <%= @target.shop4_url %></li>
+              </ul>
+            </div>
+            <div class="show_pic_artcile_area_restinfo"><img src="#"></div>
+          </div>
+        <% end %>
+
+        <% if @target.shop5_name.present? %> 
+          <h4><%= @target.shop5_name %></h4>
+          <div class="show_restshop_article_area">
+            <div class="show_article_restshop">
+              <ul>
+                <li><span class="material-icons md-18">restaurant</span> <%= @target.shop5_category %></li>
+                <li><span class="material-icons md-18">schedule</span> <%= @target.shop5_businesshours %></li>
+                <li><span class="material-icons md-18">info</span> <%= @target.shop5_tel %></li>
+                <li><span class="material-icons md-18">home</span> <%= @target.shop5_url %></li>
+              </ul>
+            </div>
+            <div class="show_pic_artcile_area_restinfo"><img src="#"></div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if @target.direction1.present? %>
+      <h3>行き方</h3>
+      <div class="show_article_area">
+          <div class="show_article"><%= @target.direction1 %></div>
+        <% if @target.direction2.present? %>
+          <div class="show_article"><%= @target.direction2 %></div>
+        <% end %>
+        <% if @target.direction3.present? %>
+        <div class="show_article"><%= @target.direction3 %></div>
+        <% end %>
+      </div>
+    <% end %>
+
+      <h3>基本情報</h3>
+      <div class="show_article_area">
+          <div class="show_basic_items">
+            <div class="show_basic_title">住所</div>
+            <div class="show_basic_artcile"><a href="<%= @target.mapurl %>" target="_blank"><%= @target.address %></a></div>          
+          </div>
+        <% if @target.contact_tel.present? %>
+          <div class="show_basic_items">
+            <div class="show_basic_title">連絡先</div>
+            <div class="show_basic_artcile"><%= @target.contact_tel %></div>
+          </div>
+        <% end %>
+        <% if @target.parking.present? %>
+          <div class="show_basic_items">
+            <div class="show_basic_title">駐車場</div>
+            <div class="show_basic_artcile"><%= @target.parking %></div>
+          </div>
+        <% end %>
+        <% if @target.url.present? %>
+          <div class="show_basic_items">
+            <div class="show_basic_title">Webサイト</div>
+            <div class="show_basic_artcile"><a href="<%= @target.url %>" target="_blank"><%= @target.url %></a><div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="show_bottom_btns">
+      <a href="#" class="show_btn">先頭に戻る</a>
+      <%= link_to("前ページに戻る", :back, class:"show_btn") %>
+    </div>
+  </main>
+</div>

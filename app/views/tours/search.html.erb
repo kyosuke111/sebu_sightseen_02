@@ -93,17 +93,17 @@
                   <%= target.description_ja %>
                 </div>
                 <div class="non_description">
-                  <div class="apply_term item">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">event_note</span> <%= target.apply_startdate.strftime("%Y/%m/%d") %> ～ <%= target.apply_enddate.strftime("%Y/%m/%d") %>
                   </div>
-                  <div class="price_ja item">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">payment</span> <%= target.price_ja %>
                   </div>
-                  <div class="companyname_ja item">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">business</span> <%= target.companyname_ja %>
                   </div>
                   <% if target.url_info.present? and target.url_info != "-"  %>
-                    <div class="info_url item">
+                    <div class="non_description_item">
                       <span class="material-icons md-18">search</span> <a href="<% target.url_info %>">Webサイトを見る</a>
                     </div>
                   <% end %>

@@ -1,0 +1,50 @@
+class AddColumnShowToAccomodation < ActiveRecord::Migration[6.0]
+  def change
+    add_column :accommodations, :picture5, :string
+    add_column :accommodations, :picture6, :string
+    add_column :accommodations, :picture7, :string
+    add_column :accommodations, :picture8, :string
+    add_column :accommodations, :flag_show, :string
+    add_column :accommodations, :roomtype1, :string
+    add_column :accommodations, :roomtype1_description, :text
+    add_column :accommodations, :roomtype2, :string
+    add_column :accommodations, :roomtype2_description, :text
+    add_column :accommodations, :roomtype3, :string
+    add_column :accommodations, :roomtype3_description, :text
+    add_column :accommodations, :roomtype4, :string
+    add_column :accommodations, :roomtype4_description, :text
+    add_column :accommodations, :roomtype5, :string
+    add_column :accommodations, :roomtype5_description, :text
+    add_column :accommodations, :shop1_name, :string
+    add_column :accommodations, :shop1_category, :string
+    add_column :accommodations, :shop1_businesshours, :string
+    add_column :accommodations, :shop1_tel, :string
+    add_column :accommodations, :shop1_url, :string
+    add_column :accommodations, :shop2_name, :string
+    add_column :accommodations, :shop2_category, :string
+    add_column :accommodations, :shop2_businesshours, :string
+    add_column :accommodations, :shop2_tel, :string
+    add_column :accommodations, :shop2_url, :string    
+    add_column :accommodations, :shop3_name, :string
+    add_column :accommodations, :shop3_category, :string
+    add_column :accommodations, :shop3_businesshours, :string
+    add_column :accommodations, :shop3_tel, :string
+    add_column :accommodations, :shop3_url, :string    
+    add_column :accommodations, :shop4_name, :string
+    add_column :accommodations, :shop4_category, :string
+    add_column :accommodations, :shop4_businesshours, :string
+    add_column :accommodations, :shop4_tel, :string
+    add_column :accommodations, :shop4_url, :string 
+    add_column :accommodations, :shop5_name, :string
+    add_column :accommodations, :shop5_category, :string
+    add_column :accommodations, :shop5_businesshours, :string
+    add_column :accommodations, :shop5_tel, :string
+    add_column :accommodations, :shop5_url, :string
+    add_column :accommodations, :direction1, :text
+    add_column :accommodations, :direction2, :text
+    add_column :accommodations, :direction3, :text
+    add_column :accommodations, :contact_tel, :string
+    add_column :accommodations, :contact_mail, :string
+    add_column :accommodations, :parking, :string
+  end
+end

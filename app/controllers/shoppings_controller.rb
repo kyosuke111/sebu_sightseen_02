@@ -18,6 +18,12 @@ class ShoppingsController < ApplicationController
     @num_targets = @search_results.count
   end
 
+  def show
+    @target = Shopping.find(params[:id])
+    gon.target_datas = @target
+  end
+
+
   private
   def search_params
     params.require(:q).permit!

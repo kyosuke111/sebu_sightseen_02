@@ -8,8 +8,8 @@
         <p><%= @target.name_en %></p>
       </div>
       <div class="tag_area">
-        <div class="search_tag"><%= @target.area_ja %></div>
-        <div class="search_tag"><%= @target.category_ja %></div>
+        <div class="search_tag"><%= @target.category_ja %></div>  
+        <div class="search_tag"><%= @target.departure_area_ja %></div>
       </div>
     </div>
 
@@ -107,38 +107,9 @@
         </div>
       <% end %>
 
-      <h3>基本情報</h3>
+      <h3>関連ツアー</h3>
       <div class="show_article_area">
-        <div class="show_basic_items">
-          <div class="show_basic_title">住所</div>
-          <div class="show_basic_artcile"><a href="<%= @target.mapurl %>" target="_blank"><%= @target.address %></a></div>          
-        </div>
-        <div class="show_basic_items">
-          <div class="show_basic_title">営業時間</div>
-          <div class="show_basic_artcile"><%= @target.businesshours_ja %></div>          
-        </div>
-        <div class="show_basic_items">
-          <div class="show_basic_title">定休日</div>
-          <div class="show_basic_artcile"><%= @target.holidays_ja %></div>
-        </div>
-        <% if @target.contact_tel.present? %>
-          <div class="show_basic_items">
-            <div class="show_basic_title">連絡先</div>
-            <div class="show_basic_artcile"><%= @target.contact_tel %></div>
-          </div>
-        <% end %>
-        <%if @target.parking.present? %>
-          <div class="show_basic_items">
-            <div class="show_basic_title">専用駐</div>
-            <div class="show_basic_artcile"><%= @target.parking %></div>
-          </div>
-        <% end %>
-        <% if @target.url.present? %>
-          <div class="show_basic_items">
-            <div class="show_basic_title">Webサイト</div>
-            <div class="show_basic_artcile"><a href="<%= @target.url %>" target="_blank"><%= @target.url %></a></div>
-          </div>
-        <% end %>
+        <div class="show_article">xx</div>
       </div>
     </div>
 

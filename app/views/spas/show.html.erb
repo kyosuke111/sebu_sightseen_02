@@ -61,23 +61,33 @@
         <div class="show_article"><%= @target.description_ja %></div>
       </div>
 
-      <% if @target.highlight1.present? %>
-        <h3>見所</h3>
+      <% if @target.comment.present? %>
+        <h3>店主のこだわり</h3>
         <div class="show_article_area">
-            <h4>見所1</h4>
+          <div class="show_highlight_article_area">
+            <div class="show_article_highlight"><%= @target.comment %></div>
+            <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.comment_pic %>"></div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @target.highlight1.present? %>
+        <h3>おすすめ</h3>
+        <div class="show_article_area">
+            <h4>おすすめ1</h4>
             <div class="show_highlight_article_area">
               <div class="show_article_highlight"><%= @target.highlight1 %></div>
               <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight1_pic %>"></div>
             </div>
           <% if @target.highlight2.present? %>
-            <h4>見所2</h4>
+            <h4>おすすめ2</h4>
             <div class="show_highlight_article_area">
               <div class="show_article_highlight"><%= @target.highlight2 %></div>
               <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight2_pic %>"></div>
             </div>
           <% end %>
           <% if @target.highlight3.present? %>
-            <h4>見所3</h4>
+            <h4>おすすめ3</h4>
             <div class="show_highlight_article_area">
               <div class="show_article_highlight"><%= @target.highlight3 %></div>
               <div class="show_pic_artcile_area_highlight"><img src="/assets/<%= @target.highlight3_pic %>"></div>
@@ -86,11 +96,47 @@
         </div>
       <% end %>
 
-      <% if @target.guide_map.present? %>
-        <h3>案内図</h3>
+      <% if @target.menu1_name.present? %>
+        <h3>主なプログラム</h3>
         <div class="show_article_area">
-          <div class="show_article"><%= @target.guide %></div>
-          <div class="show_pic_artcile_area_guide"><img src="/assets/<%= @target.guide_map %>"></div>
+            <h4>プログラム1：<%= @target.menu1_name %></h4>
+            <div class="show_article_area_spamenu">
+              <div class="show_article_spamenu">
+                <p><%= @target.menu1_description %></p>
+                <ul>
+                  <li><span class="material-icons md-18">schedule</span> <%= @target.menu1_time %></li>
+                  <li><span class="material-icons md-18">payment</span> <%= @target.menu1_price %></li>
+                </ul>
+              </div>
+              <div class="show_pic_artcile_area_highlight_spamenu"><img src="/assets/<%= @target.menu1_pic %>"></div>
+            </div>
+
+          <% if @target.menu2_name.present? %>
+            <h4>プログラム2：<%= @target.menu2_name %></h4>
+            <div class="show_article_area_spamenu">
+              <div class="show_article_spamenu">
+                <p><%= @target.menu2_description %></p>  
+                <ul>
+                  <li><span class="material-icons md-18">schedule</span> <%= @target.menu2_time %></li>
+                  <li><span class="material-icons md-18">payment</span> <%= @target.menu2_price %></li>
+                </ul>
+              </div>
+              <div class="show_pic_artcile_area_highlight_spamenu"><img src="/assets/<%= @target.menu2_pic %>"></div>
+            </div>
+          <% end %>
+          <% if @target.menu3_name.present? %>
+            <h4>プログラム3：<%= @target.menu3_name %></h4>
+            <div class="show_article_area_spamenu">
+              <div class="show_article_spamenu">
+                <p><%= @target.menu3_description %></p>  
+                <ul>
+                  <li><span class="material-icons md-18">schedule</span> <%= @target.menu3_time %></li>
+                  <li><span class="material-icons md-18">payment</span> <%= @target.menu3_price %></li>
+                </ul>
+              </div>
+              <div class="show_pic_artcile_area_highlight_spamenu"><img src="/assets/<%= @target.menu3_pic %>"></div>
+            </div>
+          <% end %>
         </div>
       <% end %>
 
@@ -107,6 +153,7 @@
         </div>
       <% end %>
 
+
       <h3>基本情報</h3>
       <div class="show_article_area">
         <div class="show_basic_items">
@@ -121,15 +168,21 @@
           <div class="show_basic_title">定休日</div>
           <div class="show_basic_artcile"><%= @target.holidays_ja %></div>
         </div>
+        <% if @target.payment_method.present? %>
+          <div class="show_basic_items">
+            <div class="show_basic_title">支払い方法</div>
+            <div class="show_basic_artcile"><%= @target.payment_method %></div>
+          </div>
+        <% end %>
         <% if @target.contact_tel.present? %>
           <div class="show_basic_items">
             <div class="show_basic_title">連絡先</div>
             <div class="show_basic_artcile"><%= @target.contact_tel %></div>
           </div>
         <% end %>
-        <%if @target.parking.present? %>
+        <% if @target.parking.present? %>
           <div class="show_basic_items">
-            <div class="show_basic_title">専用駐</div>
+            <div class="show_basic_title">駐車場</div>
             <div class="show_basic_artcile"><%= @target.parking %></div>
           </div>
         <% end %>

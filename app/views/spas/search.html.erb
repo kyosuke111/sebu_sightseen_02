@@ -51,8 +51,8 @@
           <div class="content_wrap">
             <div class="name_area">
               <div class="name">  
-                <h2><%= target.name_ja %></h2>
-                <p><%= target.name_en %></p>
+                <h2><%= link_to "#{target.name_ja}", "/spas/#{target.id}", method: :get %></h2>
+                <p><%= link_to "#{target.name_en}", "/spas/#{target.id}", method: :get %></p>
               </div>
               <div class="tag_area">
                 <div class="search_tag"><%= target.category_ja %></div>  
@@ -92,24 +92,24 @@
                   <%= target.description_ja %>
                 </div>
                 <div class="non_description">
-                  <div class="holiday">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">event_busy</span> <%= target.holidays_ja %>
                   </div>
-                  <div class="businesshour_ja">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">schedule</span> <%= target.businesshours_ja %>
                   </div>
-                  <div class="price_ja">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">payment</span> <%= target.price_ja %>
                   </div>
-                  <div class="address">
+                  <div class="non_description_item">
                     <% if target.mapurl.blank? or target.mapurl === "-"  %>
-                    【住所】 <%= target.address %>
+                      <span class="material-icons md-18">place</span> <%= target.address %>
                     <% else %>
-                    【住所】 <a href="<%=target.mapurl %>" target="_blank"><%= target.address %></a>
+                      <span class="material-icons md-18">place</span> <a href="<%=target.mapurl %>" target="_blank"><%= target.address %></a>
                     <% end %>
                   </div>
                   <% if target.url.present? and target.url != "-"  %>
-                    <div class="url item">
+                    <div class="non_description_item">
                       <span class="material-icons md-18">home</span> <a href="<%= target.url %>" target="_blank">Webサイトを見る</a>
                     </div>
                   <% end %>                  

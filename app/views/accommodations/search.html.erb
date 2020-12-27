@@ -51,8 +51,13 @@
           <div class="content_wrap">
             <div class="name_area">
               <div class="name">  
-                <h2><%= target.name_ja %></h2>
-                <p><%= target.name_en %></p>
+                <% if target.flag_show === "yes" %>
+                    <h2><%= link_to "#{target.name_ja}", "/accommodations/#{target.id}", method: :get %></h2>
+                    <p><%= link_to "#{target.name_en}", "/accommodations/#{target.id}", method: :get %></p>
+                  <% else %>
+                    <h2><%= target.name_ja %></h2>
+                    <p><%= target.name_en %></p>
+                <% end %>
               </div>
               <div class="tag_area">
                 <div class="search_tag"><%= target.category_ja %></div>  
@@ -92,10 +97,10 @@
                   <%= target.description_ja %>
                 </div>
                 <div class="non_description">
-                  <div class="price_ja item">
+                  <div class="non_description_item">
                     <span class="material-icons md-18">payment</span> <%= target.price_ja %>
                   </div>
-                  <div class="address item">
+                  <div class="non_description_item">
                     <% if target.mapurl.blank? or target.mapurl === "-"  %>
                       <span class="material-icons md-18">place</span> <%= target.address %>
                     <% else %>
@@ -103,7 +108,7 @@
                     <% end %>
                   </div>
                   <% if target.url.present? and target.url != "-"  %>
-                    <div class="url item">
+                    <div class="non_description_item">
                       <span class="material-icons md-18">home</span> <a href="<%= target.url %>" target="_blank">Webサイトを見る</a>
                     </div>                  
                   <% end %>
