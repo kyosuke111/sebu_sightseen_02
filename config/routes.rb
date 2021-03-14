@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root  'sightseens#index'
+  
+  resources :tops, only: [:index, :show]
+  
   resources :sightseens, only: [:index, :show] do
     collection do
       get 'search'
@@ -81,5 +84,6 @@ Rails.application.routes.draw do
   end
 
   resources :generals, :only => :index
-
+  resources :weathers, :only => :index
+  
 end

@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <%= include_gon %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
@@ -65,7 +66,7 @@
           <li><%= link_to "お土産", souvenirs_path, data: {"turbolinks" => false} %></li>
           <li><%= link_to "交通・移動", transportations_path, data: {"turbolinks" => false} %></li>
           <li><%= link_to "留学", schools_path, data: {"turbolinks" => false} %></li>
-          <li><a href="#">気候・天気</a>
+          <li><%= link_to "天候", weathers_path, data: {"turbolinks" => false} %></li>
           <li><%= link_to "基本情報", generals_path, data: {"turbolinks" => false} %></li>
         </ul>
       </div>

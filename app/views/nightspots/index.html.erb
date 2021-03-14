@@ -112,7 +112,7 @@
                 </div>
                 <% if target.url.present? and target.url != "-"  %>
                   <div class="non_description_item">
-                    <span class="material-icons md-18">home</span> <a href="<%= target.url %>" target="_blank">Webサイトを見る</a>
+                    <span class="material-icons md-18">home</span> <a href="<%= target.url %>" target="_blank"><%= target.url %></a>
                   </div>                       
                 <% end %>
               </div>
